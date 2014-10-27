@@ -1,0 +1,36 @@
+[user]
+#	email =
+#	name =
+
+[color]
+	ui = auto
+
+[diff]
+	tool = vimdiff
+
+[merge]
+	tool = vimdiff
+
+[alias]
+	co = checkout
+	a = add
+	c = commit
+	ca = commit --amend
+	pi = cherry-pick
+	ri = rebase -i
+	d = diff
+	dc = diff --cached
+	dt = difftool -y
+	st = status
+	b = branch
+	ba = branch -a
+	l = log
+	l1 = log --oneline
+	fo = fetch origin
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	sh = show
+	cv = cherry -v
+
+[core]
+	excludesfile = ~/.gitignore
+
