@@ -5,32 +5,39 @@
 [color]
 	ui = auto
 
-[diff]
-	tool = vimdiff
-
-[merge]
-	tool = vimdiff
+#[diff]
+#	tool = vimdiff
+#
+#[merge]
+#	tool = vimdiff
 
 [alias]
-	co = checkout
-	a = add
-	c = commit
-	ca = commit --amend
-	pi = cherry-pick
-	ri = rebase -i
-	d = diff
-	dc = diff --cached
-	dt = difftool -y
-	st = status
-	b = branch
-	ba = branch -a
-	l = log
-	l1 = log --oneline
-	fo = fetch origin
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	sh = show
-	cv = cherry -v
+        co = checkout
+        a = add
+        c = commit
+        ca = commit --amend
+        pi = cherry-pick
+        ri = rebase -i
+        d = diff
+        dc = diff --cached
+        dt = difftool -y
+        st = status
+        b = branch
+        ba = branch -a
+        l = log
+        l1 = log --oneline -n 20
+        fo = fetch origin
+        fp = fetch origin --prune
+        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+        sh = show
+        cv = cherry -v
+        sm = submodule
 
 [core]
 	excludesfile = ~/.gitignore
 
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
